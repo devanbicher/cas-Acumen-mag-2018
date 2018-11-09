@@ -1,0 +1,51 @@
+/* =============================================================================
+ *   Comment Styling - Comments, comment wrapper, comment form
+ * ========================================================================== */
+/*Wrapper for the list of comments and its titles*/
+#comments {
+  margin: 1.5em 0;
+}
+#comments h2 {}
+#comments h2.comment-title {
+  margin: 0;
+}
+#comments h2.comment-form {
+  margin: 0;
+}
+/*Wrapper for a single comment*/
+.comment {
+  margin-bottom: 20px;
+}
+.comment.first {}
+.comment.last {}
+.comment.odd {}
+.comment.even {}
+.comment .user-picture {}
+.comment .submitted {}
+.comment .submitted p {}
+.comment .submitted .username {}
+.comment .submitted time {}
+.comment .user-signature {}
+.comment ul.links {}
+/*Comment title*/
+.comment-title {
+  margin: 0;
+}
+/*Comment states*/
+.comment-new {}
+.comment-by-anonymous {}
+.comment-by-node-author {}
+.comment-by-viewer {}
+.comment-title-hidden {}
+.comment-with-picture {}
+.comment-with-signature {}
+/*Preview of the comment before submitting new or updated comment*/
+.comment-preview {}
+/*"New" marker for comments that are new for the current user*/
+.new {
+  color: #c00;
+}
+/*Nested comments are indented*/
+.indented {
+  margin-left: 40px;
+}

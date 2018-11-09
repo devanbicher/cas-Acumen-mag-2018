@@ -1,0 +1,3 @@
+#git ignore file.  For right now it only excludes emacs backup files with ~ at the end
+
+*.*~

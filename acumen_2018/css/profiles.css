@@ -1,0 +1,20 @@
+.node-type-profile {
+    vertical-align: top;
+    vertical-align: top;
+}
+.node-type-profile .field-name-field-image {
+    display: inline-block;
+    vertical-align: top;
+}
+.node-type-profile .field-name-field-image img {
+    max-width: 300px;
+    margin-right: 20px;
+}
+.node-type-profile #profile-info {
+    display: inline-block;
+}
+.node-type-profile #profile-info .field-item {
+    font-size: 20px;
+    font-size: calc(18px + .2vw);
+    margin-bottom: 10px;
+}

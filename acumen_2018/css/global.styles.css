@@ -1,0 +1,1262 @@
+/*
+ * @file
+ * global.styles
+ *
+ * Styles you add here will load for all device sizes, they are "global", as
+ * opposed to "responsive" styles, which only load for a given breakpoint (media
+ * query) that you set in theme settings. See the README for more details.
+ *
+ *
+ * How to use this file:
+ * --------------------
+ *
+ * There are many empty selectors and some basic styles to act as a guide.
+ * Nothing is set in stone and you can change anything.
+ *
+ * See global.base also which includes normalize.css and some additional
+ * helper classes and base styles.
+ */
+
+/* Places to add styles before resorting to the end of the page: */
+
+/* -Specific Node Styling */
+/* -Specific Block Styling */
+/* -Specific View Styling */
+
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,400i,700|Oswald:100,200,400,500,600,700');
+@font-face {
+    font-family: 'Frutiger';
+    src: url('../frutiger/frutigerltstd-light-webfont.eot');
+    src: url('../frutiger/frutigerltstd-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../frutiger/frutigerltstd-light-webfont.woff') format('woff'),
+         url('../frutiger/frutigerltstd-light-webfont.ttf') format('truetype'),
+         url('../frutiger/frutigerltstd-light-webfont.svg#FrutigerLTStd45LightRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Valencia';
+    src: url('../valencia/valencia_serial-mediumitalic-webfont.woff') format('woff'),
+         url('../valencia/valencia_serial-mediumitalic-webfont.woff2') format('woff2');
+}
+
+/** SITE GLOBAL COLORS **/
+/** Set your global colors here in the :root psuedo class **/
+/** reference them with var(--variable-name) **/
+/** Update the comment after to a description of the color ie: dark blue**/
+/** Variables inherit values from parents, so one can be overwritten in a more narrow
+    scope by re-assigning a value to it in a direct parent of what you're working on **/
+:root {
+    --main: #304e72; /* CAS Dark Blue */
+    --complement: white; /* */
+    --menu: #502d0e; /* Lehigh Brown */
+    --menu-low-opacity: #502d0e33; /* Lehigh Brown 20% opacity */
+    --header-1: #d3d9b2;
+    --main-font: #555; /* dark gray */
+    --lehigh-brown: #502d0e; /* Lehigh Brown */
+    --link: #ff9900; /* bright orange */
+    --font-backup: 16px; /*back-up size for calc-unsupported browsers*/
+    --font-default: calc(14px + 0.2vw); /* Default scaling font size */
+    --font-fam: 'Merriweather', 'Frutiger', Helvetica, Arial, Sans-serif; /* Primary font set */
+    --font-fam-2: 'Oswald', 'Frutiger', Helvetica, Arial, Sans-serif; /* Secondary font set */
+}
+/* =============================================================================
+ *   Base
+ * ========================================================================== */
+/* To preserve theme settings never apply font properties to the HTML element.
+ * This is critically important if you are using the Responsive JavaScript
+ * feature as this relies on being able to set a pseudo font family on the HTML
+ * element. If you need to set default font properties of any kind use the BODY
+ * element as these can be overridden using font theme settings. */
+html {
+  background: #fff;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Merriweather', 'Frutiger', Helvetica, Arial, Sans-serif;
+    font-family: var(--font-fam);
+    background: white;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    color: #555;
+    color: var(--main-font);
+}
+
+/* =============================================================================
+ *   HTML Elements
+ * ========================================================================== */
+/* Font sizes, colors, line-height white space, <a> tags */
+/****************************************/
+/*Default font sizes*/
+
+h1, h2, h3, h4, h5, h6, p, ol, ul {
+    line-height: 1.6em;
+}
+h1#page-title {
+    font-size: 32px;
+    font-size: calc(25px + 0.6vw);
+}
+h1 {
+    font-size: 28px;
+    font-size: calc(22px + 0.5vw);
+}
+h2 {
+    font-size: 25px;
+    font-size: calc(20px + 0.5vw);
+}
+h3 {
+    font-size: 22px;
+    font-size: calc(20px + 0.2vw);
+}
+h4 {
+    font-size: 20px;
+    font-size: calc(18px + 0.2vw);
+}
+h5 {
+    font-size: 18px;
+    font-size: calc(16px + 0.25vw);
+}
+h6 {
+    font-size: 18px;
+    font-size: calc(16px + 0.2vw);
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', 'Frutiger', Helvetica, Arial, Sans-serif;
+    font-family: var(--font-fam-2);
+}
+p,
+ul,
+ol,
+.node-content p {
+    font-size: var(--font-backup);
+    font-size: var(--font-default);
+}
+#columns .content-inner p:before,
+#columns .content-inner h1:before,
+#columns .content-inner h2:before,
+#columns .content-inner h3:before,
+#columns .content-inner h4:before,
+#columns .content-inner h5:before,
+#columns .content-inner h6:before,
+#columns .content-inner p:before {
+  content: "";
+  width: 120px;
+  display: block;
+  overflow: hidden;
+}
+/* Extra WYSIWYG editor font styles */
+/* Standout text that needs to be bigger and more prominent, i.e standout. but not an alert */
+.standout-text{
+    font-weight: bold !important;
+    color: #296A8E !important;
+}
+/* Alert text, usually red and bigger */
+.alert-text{
+    font-weight: bold !important;
+    color: #BF3649 !important;
+    text-decoration: underline !important;
+}
+/* This is for small note-taking text, like with an '*' */
+.annotation-text{
+    font-size: 14px !important;
+    font-size: calc(12px + .2vw) !important;
+}
+/* =============================================================================
+ *   Links
+ * ========================================================================== */
+a {
+    color: #ff9900;
+    color: var(--link);
+    text-decoration: none;
+    transition: .2s;
+}
+a:active,
+a:focus,
+a:hover {
+    text-decoration: none;
+}
+.node-content a {
+    position: relative;
+}
+.node-content a:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    border-bottom: 2px solid  #ff9900;
+    border-bottom: 2px solid var(--link);
+    transition: 0.25s;
+}
+.node-content a:hover:after {
+    width: 100%;
+    left: 0;
+}
+a img {
+    backface-visibility: hidden;
+    transition: .4s;
+}
+.block a img:hover,
+.node-content a img:hover{
+    filter: brightness(.8);
+}
+pre, code, tt, samp, kbd, var {
+  font-family: Consolas, Monaco, 'Courier New', Courier, monospace, sans-serif;
+}
+/* =============================================================================
+ *   Header and Logo
+ * ========================================================================== */
+#header {
+  background-color: #d3d9b2;
+  background-color: var(--header-1);
+  padding: 25px 13vw;
+  display: flex;
+  justify-content: space-between;
+}
+#lehigh-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#cas-logo {
+    display: flex;
+}
+#cas-logo a {
+    display: inline-block;
+    position: relative;
+    color: #502d0e;
+    color: var(--lehigh-brown);
+    font-size: 20px;
+    font-size: calc(16px + 0.2vw);
+    line-height: 1.3;
+    font-family: "Frutiger";
+    text-transform: uppercase;
+}
+#footer #cas-logo a {
+    color: white;
+}
+#cas-logo a:hover {
+    text-decoration: none;
+}
+#cas-logo a:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 2%;
+    width: 0%;
+    margin-left: 2%;
+    border-bottom: 2px solid #502d0e;
+    border-bottom: 2px solid var(--lehigh-brown);
+    transition: 0.3s ease;
+}
+#footer #cas-logo a:after {
+    border-color: white;
+}
+#cas-logo a:hover:after {
+    width: 96%;
+    left: 0;
+}
+#lehigh-logo {
+    display: inline-block;
+    margin: 0px 10px;
+    border-right: 1px solid #502d0e;
+    border-right: 1px solid var(--lehigh-brown);
+    padding-right: 10px;
+}
+#footer #lehigh-logo {
+    border-color: white;
+    min-width: 150px;
+}
+.site-logo {
+    display: block;
+    max-height: 45px;
+    max-height: calc(50px + 1vw);
+    min-width: 125px;
+}
+/*Site name and department*/
+#header-wrap {
+    text-align: right;
+}
+#headertext a {
+    display: block;
+    color: #502d0e;
+    color: var(--lehigh-brown);
+    font-weight: bold;
+    padding: 2px 12px;
+    line-height: 1.1;
+}
+#title {
+    font-size: 75px;
+    font-size: calc(75px + .4vw);
+    position: relative;
+    display: block;
+    font-weight: normal;
+    font-family: 'Valencia';
+    word-wrap: normal;
+}
+a#title-a {
+    display: block;
+    position: relative;
+}
+#dept {
+    font-size: 11px;
+    word-spacing: -1px;
+    font-weight: normal;
+    position: relative;
+    display: block;
+    font-style: italic;
+    font-family: 'Valencia';
+}
+#title-a:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 1%;
+    width: 0%;
+    margin-left: 1%;
+    margin-bottom: -2px;
+    border-bottom: 2px solid #502d0e;
+    border-bottom: 2px solid var(--lehigh-brown);
+    transition: 0.3s ease;
+}
+#title-a:hover:after {
+    width: 98%;
+    left: 0;
+}
+
+/* =============================================================================
+ *   Primary, Secondary and Menu Bar region menus
+ * ========================================================================== */
+ul.menu li {
+    margin: 0;
+}
+.nav {
+    padding: 0px 13vw;
+    background: #502d0e;
+    margin:0;
+    margin:auto;
+}
+
+.nav ul,
+.nav ul.menu {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.nav li {
+    display:inline-block;
+    flex-basis: 0;
+    flex-grow: 1;
+    background-color: #502d0e;
+    background-color: var(--menu);
+    transition: .35s;
+    white-space: nowrap;
+}
+.nav li a:hover {
+    background-color: #d3d9b2;
+    background-color: var(--header-1);
+}
+.nav li a,
+.nav ul.menu li a {
+    padding: 5px 10px;
+    display: flex;
+    justify-content: center;
+    color: #d3d9b2;
+    color: var(--header-1);
+    text-decoration: none;
+    font-family: 'Frutiger';
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.menu-wrapper {
+    margin: 0;
+    padding: 0;
+}
+.nav li a:visited,
+.nav ul.menu li a:visited {}
+
+.nav li a:hover, .nav ul.menu li a:hover {
+    cursor: pointer;
+    color: #502d0e;
+    color: var(--menu);
+}
+
+.nav .block {
+  margin-bottom: 0;
+}
+.nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+/******* Mean Menu ********/
+.mean-nav .menu-wrapper {
+    margin: 0px;
+}
+.mean-container .mean-bar {
+    background: #502d0e;
+    background: var(--menu);
+}
+.mean-container .mean-nav {
+    background: white;
+}
+.mean-container .mean-nav ul li a {
+    color: #502d0e;
+    color: var(--menu);
+}
+.mean-container .mean-nav ul li a:hover {
+    background: var(--menu-low-opacity);
+}
+/* =============================================================================
+ *   Page content header
+ * ========================================================================== */
+
+/*
+ * Main content header wraps the page title, tabs and actions links
+ */
+#main-content-header {
+    margin: 0px 4vw;
+}
+.node-type-feature #main-content-header {
+    margin: 0 2vw;
+}
+/*
+ * The main page title (h1)
+ */
+#page-title {
+    margin: 0;
+    padding: 3% 0;
+}
+
+/* =============================================================================
+ *   Wrappers
+ * ========================================================================== */
+/*
+ * Outer wrappers:
+ * - #page-wrapper: body > #page-wrapper
+ * - #page: body > #page-wrapper > #page
+ * - .container: body > #page-wrapper > #page.container
+ *
+ * The .container class holds the page width value from theme settings.
+ */
+#page-wrapper {}
+#page {
+    border-radius: 5px;
+}
+#page .container {}
+/*
+ * Wraps the sidebars the content column
+ */
+#columns {
+    position: relative;
+    overflow: auto;
+    overflow-y: hidden;
+    padding: 0% 10vw 2% 10vw
+}
+.node-type-brief #columns,
+.node-type-feature #columns {
+    padding: 2% 11vw;
+}
+/*
+ * Main content column wrapper
+ */
+#content-column {}
+/*
+ * Wraps the main-content-header, the content region and feed-icons. Use this
+ * wrapper to style the entire main content column
+ */
+#main-content {
+    margin: 0;
+}
+
+/*
+ * Wraps the content region, avoid applying styles to this wrapper, its used
+ * mainly for position and invisible gutters and can be problematic to style
+ */
+#content {
+    padding: 2vw;
+    padding-right: calc(6vw - 20px);
+}
+#content p {
+    line-height: 1.9em;
+}
+
+.region.region-sidebar-first.sidebar {}
+.region.region-sidebar-second.sidebar {
+    margin-top: 3vw;
+}
+
+/************************
+     Footer Styles
+************************/
+#footer {
+    background-color: #333333;
+    padding: 0 13vw;
+    width: auto !important;
+}
+#fc {
+    border-top: 1px solid grey;
+    margin-top: 20px;
+}
+
+#fc A {
+    color: white !important;
+    font-family: 'Frutiger' !important;
+}
+#fc A:hover {
+    color: #d8d3cb !important;
+}
+#fc #fcb li {
+    color: #ccc;
+}
+#footer-social {
+    display: flex;
+    align-items: baseline;
+    justify-self: flex-end;
+}
+#footer-social img {
+    width: 60px;
+    margin: 0 6px;
+}
+.region-blockgroup-footer-group .region-inner {
+    display: flex;
+    flex-wrap: wrap;
+}
+.region-blockgroup-footer-group .block {
+    flex: 1 1 300px;
+    margin: 15px 30px;
+}
+#block-block-2 p {
+    margin: 0px;
+    font-size: 14px;
+    color: white;
+    font-family: "Frutiger";
+    font-weight: 700;
+}
+.region-blockgroup-footer-group {
+    padding-top: 50px;
+}
+#block-block-1 {
+    flex-basis: 200px;
+    margin-right: 15px;
+}
+#block-block-2 {
+    flex-basis: 200px;
+}
+#block-block-3 {
+    flex-basis: 200px;
+}
+
+/* =============================================================================
+ *   Misc Global Styles
+ * ========================================================================== */
+/*Feed icons*/
+.feed-icon {}
+/*Aggregator feed source*/
+#aggregator .feed-source .feed-icon {
+  display: inline;
+  float: none;
+  margin-right: 10px;
+}
+.feed-details dt,
+.feed-details dd {
+  display: inline;
+  margin: 0;
+}
+/*Generic styles for the more link*/
+.more-link {}
+
+/*Generic styles for links. See the ul.links declaration in node and comment stylesheets*/
+ul.links {
+  margin: 0;
+  padding: 0;
+}
+ul.links.inline {
+  display: block;
+}
+ul.links li {
+  display: inline;
+  list-style-type: disc;
+  padding: 0 10px 0 0;
+}
+/*Search results are an ordered list so reset the margin*/
+.search-results {
+  margin: 0;
+  padding: 0;
+}
+/*Attribution message and link*/
+.attribution {
+  display: block;
+  opacity: 0.65;
+  padding: 1em 0;
+  text-align: center;
+}
+.attribution a {
+  text-decoration: none;
+  color: inherit;
+}
+.attribution a:hover,
+.attribution a:focus {
+  text-decoration: underline;
+}
+/*iframe responsiveness*/
+.player {
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 56.25%;
+}
+.player iframe {
+    z-index: -101;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.embedded-video {
+    padding: 0px 10%;
+    background: #111111;
+}
+/* =============================================================================
+ *   Buttons
+ * ========================================================================== */
+.view .link-button {
+    display: inline-block;
+    margin-bottom: 35px;
+}
+.link-button a {
+    background: #304e72;
+    background: var(--main);
+    color: white;
+    color: var(--complement);
+    border: none;
+    position: relative;
+    padding: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background .3s ease-in-out .8s, color .2s ease-in-out .8s;
+    outline: none;
+    font-size: var(--font-backup);
+    font-size: var(--font-default);
+    letter-spacing: 2px;
+}
+.link-button a:hover{
+  background: transparent;
+  color: #304e72;
+  color: var(--main);
+  transition-delay: 0s;
+}
+.link-button a:before, .link-button a:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height: 0;
+  width:0;
+  border-top: 2px solid transparent;
+  border-right: 2px solid transparent;
+  transition: .4s ease, width .4s ease .4s, border-color .2s ease .8s;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+.link-button a:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+  border-top: none;
+  border-right: none;
+  border-bottom: 2px solid transparent;
+  border-left: 2px solid transparent;
+}
+.link-button a:hover:before, .link-button a:hover:after{
+  width:100%;
+  height: 100%;
+  border-color: var(--main);
+  transition: .4s ease .2s, height .4s ease .6s, border-color .3s ease;
+}
+
+/* =============================================================================
+ *   Regions
+ * ========================================================================== */
+/*Standard region wrapper, don't add width to any regions, you will bork the
+  layout - no margin, padding or borders etc*/
+.region {}
+/*Regions have an inner div - perfect for adding margin, padding or borders*/
+.region-inner {}
+/*Regions can be nested, such as when using Panels*/
+.region-inner .region-inner {}
+/*Footer region*/
+.region-footer {}
+/* =============================================================================
+ *   Breadcrumbs
+ * ========================================================================== */
+#breadcrumb {
+  margin: 10px 0;
+}
+/* If the label is set to show in theme settings the label class is added */
+#breadcrumb .breadcrumb-label {
+  font-size: 1em;
+  display: inline;
+  padding-right: 10px;
+}
+#breadcrumb .breadcrumb-label:after {
+  content: ":";
+}
+#breadcrumb ol {
+  margin: 0;
+  padding: 0;
+}
+#breadcrumb .with-breadcrumb-label ol {
+  display: inline;
+}
+#breadcrumb li {
+  list-style: none;
+  display: inline;
+}
+#breadcrumb li.crumb-first {}
+#breadcrumb li.crumb-last {}
+#breadcrumb a {}
+#breadcrumb a:link,
+#breadcrumb a:visited {}
+#breadcrumb a:active,
+#breadcrumb a.active {}
+#breadcrumb a:hover,
+#breadcrumb a:focus {}
+#breadcrumb .crumb-separator {}
+/* =============================================================================
+ *   Pagers
+ * ========================================================================== */
+ul.pager {
+    clear: both;
+    margin: 0;
+    text-align: center;
+}
+.item-list ul.pager li {
+    padding: 0;
+    margin: 0;
+}
+ul.pager li {
+    display: inline;
+    list-style-type: none;
+    padding: 0;
+}
+ul .pager-item a {
+    display: inline-block;
+    color: var(--main);
+    padding: 8px 16px;
+    text-decoration: none;
+}
+ul.pager li a:hover {
+    background-color: var(--menu-low-opacity);
+}
+ul.pager li.pager-current {
+    background-color: var(--main);
+    display: inline-block;
+    color: var(--complement);
+    padding: 8px 16px;
+    text-decoration: none;
+}
+ul.pager li.pager-first a,
+ul.pager li.pager-previous a,
+ul.pager li.pager-last a,
+ul.pager li.pager-next a{
+    display: inline-block;
+    color: var(--main);
+    padding: 8px 16px;
+    text-decoration: none;
+}
+.block ul.pager li {
+    margin: 0;
+}
+/*
+ * Theme the various states of pager links
+ */
+ul.pager li {}
+ul.pager li a {}
+ul.pager li a:link,
+ul.pager li a:visited {}
+ul.pager li a:active,
+ul.pager li a.active {}
+ul.pager li a:hover,
+ul.pager li a:focus {}
+ul.pager li.pager-item {}
+ul.pager li.first {}
+ul.pager li.last {}
+ul.pager li.pager-current {}
+
+
+/* =============================================================================
+ *   Skip Navigation
+ * ========================================================================== */
+#skip-link {
+    display: none;
+}
+/* =============================================================================
+ *  Field Styling
+ * ========================================================================== */
+/* Above and inline classes are on the field wrapper */
+.field-label-above {}
+
+/* When labels are set to inline in field display settings the clearfix class is
+ * automatically added */
+.field-label-inline {}
+
+.field-label-inline .field-label {
+  margin: 0;
+}
+/* Labels are h2 in Adaptivetheme. Use a strong selector to mitigate unwanted
+ * ineritance issues */
+.field-label {
+  font-weight: 700;
+  font-family: inherit;
+  margin-bottom: 0;
+  font-size: var(--backup);
+  font-size: var(--default);
+}
+/* Taxonomy */
+.field-type-taxonomy-term-reference {
+  /* The same bottom margin as p, blockquote, ul, ol and dl */
+  margin-bottom: 1.5em;
+}
+.field-type-taxonomy-term-reference.field-label-inline .field-items {
+  margin: 0;
+  padding: 0;
+}
+.field-type-taxonomy-term-reference.field-label-inline .field-item {
+  display: inline;
+  list-style: none;
+  padding: 0 10px 0 0;
+}
+/*Text*/
+.field-type-text {}
+/*Long text*/
+.field-type-text-long {}
+/*Text with summary*/
+.field-type-text-with-summary {}
+/*File*/
+.field-type-file {}
+/*Number/Integer*/
+.field-type-number-integer {}
+/*Decimal*/
+.field-type-number-decimal {}
+/*Number float*/
+.field-type-number-float {}
+/*List*/
+.field-type-list-text {}
+/*List boolean*/
+.field-type-list-boolean {}
+/*List integer*/
+.field-type-list-integer {}
+/*List float*/
+.field-type-list-float {}
+/*Field types (Contrib)*/
+.field-type-datetime {}
+.field-type-node-reference {}
+.field-type-user-reference {}
+/*Named fields*/
+.field-name-body {}
+.field-name-field-image {}
+.field-name-field-tags {}
+/*Underscores in field name are replaced with dashes*/
+.field-name-field-FIELDNAME {}
+/* =============================================================================
+ *  General Block Styling
+ * ========================================================================== */
+/*Main wrapper for most blocks, block_system_main does not have it*/
+.block {
+  margin-bottom: 0;
+}
+/*Inner wrapper for most blocks, good for margin, padding and borders, block_system_main does not have it*/
+.block-inner {
+  margin: 0;
+}
+.front .block-inner {}
+/*The first block in the region*/
+.block.first {}
+/*The last block in the region*/
+.block.last {}
+/*Zebra striping for each block in the region*/
+.block.odd {}
+/*Zebra striping for each block in the region*/
+.block.even {}
+/*Block title*/
+.block-title {}
+/*Block content wrapper*/
+.block-content {}
+/*Match item list and block menu margin and padding*/
+.block-content {}
+.block-content ul,
+.block-content ol {
+  padding: 0 0 0 15px;
+}
+.block-content li {
+  margin: 0;
+  padding: 0;
+}
+/*Block for the latest news items in the first category*/
+#block-aggregator-category-1 {}
+/*Block for the latest news items in the first feed*/
+#block-aggregator-feed-1 {}
+/*"Recent blog posts" block*/
+#block-blog-recent {}
+/*"Book navigation" block for the current book's table of contents*/
+#block-book-navigation {}
+/*"Recent comments" block*/
+#block-comment-recent {}
+/*"Active forum topics" block*/
+#block-forum-active {}
+/*"New forum topics" block*/
+#block-forum-new {}
+/*Language switcher block*/
+#block-locale-language {}
+/*Custom menu block*/
+#block-menu-menu-NAME {}
+/*"Recent content" block*/
+#block-node-recent {}
+/*"Syndicate" block for primary RSS feed; see also page.css's .feed-icon*/
+#block-node-syndicate {}
+/*"Most recent poll" block*/
+#block-poll-recent {}
+/*"Author information" block for the profile of the page's author*/
+#block-profile-author-information {}
+/*"Search form" block*/
+#block-search-form {}
+/*"Shortcuts" block*/
+#block-shortcut-shortcuts {}
+/*"Popular content" block*/
+#block-statistics-popular {}
+/*"Main menu" block*/
+#block-system-main-menu {}
+/*"Management" block for Drupal management menu*/
+#block-system-management {}
+/*"Navigation" block for Drupal navigation menu*/
+#block-system-navigation {}
+/*"User menu" block for Drupal user menu*/
+#block-system-user-menu {}
+/*"System help" block*/
+#block-system-help {}
+/*"Main page content" block*/
+#block-system-main {}
+/*"Powered by Drupal" block*/
+#block-system-powered-by {}
+/*"User login form" block*/
+#block-user-login {}
+/*"Who's new" block for a list of the newest users*/
+#block-user-new {}
+/*"Who's online" block for a list of the online users*/
+#block-user-online {}
+
+/* =============================================================================
+ *  General Node Styling
+ * ========================================================================== */
+.node.node-promoted {}
+.node.node-sticky {}
+.node.node-by-viewer {}
+.node.node-teaser {}
+.node.node-full {}
+.node.odd {}
+.node.even {}
+.node .node-title {
+  margin: 0;
+}
+
+/* =============================================================================
+ *  Specific Node Styling
+ * ========================================================================== */
+/*
+ * All nodes are given a node-FOO class that describes the type of content that
+ * it is. If you create a new content type called "my-custom-type", it will
+ * receive a "node-my-custom-type" class.
+ */
+.node-page {}
+/* =============================================================================
+ *   Forms
+ * ========================================================================== */
+/*
+ * Wrapper for a form element (or group of form elements) and its label
+ */
+.form-item {}
+.form-item input.error,
+.form-item textarea.error,
+.form-item select.error {
+  border: 1px solid #c00;
+}
+.form-item label {
+  font-weight: 700;
+}
+.form-item label.option {}
+/*
+ * Highlight marks and form required mark
+ */
+.marker,
+.form-required {
+  color: #c00;
+}
+.form-item .description {
+  font-size: 0.85em;
+}
+.form-checkboxes .form-item,
+.form-radios .form-item {}
+/*
+ * The submit button
+ */
+.form-submit {}
+.container-inline div,
+.container-inline label {
+  display: inline;
+}
+/*
+ * Define consistent borders
+ */
+fieldset {
+  border: 1px solid #ccc;
+}
+/*
+ * Tips for Drupal's input formats
+ */
+.tips {}
+/*
+ * Buttons used by contrib modules like Media
+ */
+a.button {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+}
+/*
+ * Password confirmation
+ */
+.password-parent,
+.confirm-parent {
+  margin: 0;
+}
+/* =============================================================================
+ *   Tables
+ * ========================================================================== */
+table {
+  margin: 10px 0;
+  padding: 0;
+  width: 100%;
+}
+table.sticky-header {
+  z-index: 10;
+}
+table,
+thead,
+tbody,
+tr,
+th,
+td {
+  border-color: #ccc;
+}
+table,
+td,
+th {
+  vertical-align: middle;
+}
+caption,
+th,
+td {
+  text-align: left;
+}
+thead tr {
+  font-weight: 700;
+  background-color: #e5e5e5;
+}
+td,
+th {
+  border-bottom: 0;
+  margin: 0;
+  padding: 5px 7px;
+}
+tbody {}
+tbody tr {
+  border-top: 1px solid #ccc;
+}
+tr.odd {
+  background: #fff;
+}
+tr.info,
+tr.even,
+tr:nth-child(2n+2) {
+  border-bottom: 0;
+  background-color: #f5f5f5;
+}
+tr.drag {}
+tr.drag-previous {}
+tr.odd td.active {
+  background-color: #eee;
+}
+tr.even td.active {
+  background-color: #ebebeb;
+}
+.lt-ie8 tr {}
+.lt-ie8 tr.even,
+.lt-ie8 tr.odd {}
+.lt-ie8 tr.even th,
+.lt-ie8 tr.even td,
+.lt-ie8 tr.odd th,
+.lt-ie8 tr.odd td {
+}
+/*
+ * Forum tables
+ * Core sets white-space to nowrap, which makes no sense
+ */
+#forum td {}
+#forum td.created,
+#forum td.posts,
+#forum td.topics,
+#forum td.last-reply,
+#forum td.replies,
+#forum td.pager {
+  white-space: normal;
+}
+
+/* =============================================================================
+ *   Messages
+ * ========================================================================== */
+/* Left and right margin are set by the global gutter width */
+div.messages {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+div.messages ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+div.status {}
+div.warning {}
+tr.warning {}
+div.error,
+tr.error {}
+.error {}
+.warning {}
+/*
+ * Unpublished nodes
+ */
+.node-unpublished,
+.comment-unpublished {}
+.node-unpublished,
+.comment-unpublished {}
+.node-unpublished p.unpublished,
+.comment-unpublished p.unpublished {
+  color: pink;
+  color: rgba(239, 170, 170, 0.4);
+  font-family: Impact,"Arial Narrow",Helvetica,sans-serif;
+  font-size: 75px;
+  font-weight: bold;
+  height: 0;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  text-align: center;
+  text-transform: uppercase;
+  word-wrap: break-word;
+}
+
+/*
+ * Otherwise these elements will appear below the "Unpublished" text
+ */
+.lt-ie8 {}
+.lt-ie8 .node-unpublished > *,
+.lt-ie8 .comment-unpublished > * {
+  position: relative;
+}
+
+
+/* =============================================================================
+ *    Maintenance pages
+ * ========================================================================== */
+.maintenance-page {}
+.maintenance-page .container {
+  padding: 40px 0;
+}
+.maintenance-page #site-name,
+.maintenance-page #page-title {
+  margin: 0;
+}
+.db-offline {}
+.db-offline .container {
+  margin: 0 auto;
+  padding: 40px 0;
+  width: 100%;
+  max-width: 960px;
+}
+.db-offline div.messages {
+  margin: 20px 0 0;
+}
+.db-offline #content {
+  padding: 20px 0;
+}
+/* =============================================================================
+ *   Misc overrides for contrib modules
+ * ========================================================================== */
+/*
+ * Admin menu overrides
+ */
+#tasks ul, #admin-menu ul, #admin-menu ol { /* Drupal admin menu font size override */
+    font-size: 14px;
+}
+#admin-menu {
+  margin: 0;
+  padding: 0;
+}
+/*
+ * Devel Module
+ */
+.dev-query {
+  background: #eee;
+  padding: 30px;
+}
+/*
+ * Styleguide module tweaks
+ */
+#styleguide-header {
+  padding: 0 10px;
+}
+
+#styleguide-header .item-list {
+  font-family: inherit;
+  margin: 0 20px 20px 0;
+  min-height: 260px;
+  width: auto;
+}
+.flexslider{
+  border: none;
+}
+.flex-nav-container{
+  margin:0;
+}
+#footercurrent{
+  padding-top:20px;
+}
+p.color-main {
+  color: #572000;
+}
+p.color-accent-1 {
+  color: #ffd24f;
+}
+p.color-accent-2 {
+  color: #e51937;
+}
+p.color-accent-3{
+  color: #baa885;
+}
+/* =============================================================================
+ *  Specific Block Stylings
+ * ========================================================================== */
+
+
+/* =============================================================================
+ *  Specific View Styling
+ * ========================================================================== */

@@ -1,0 +1,1221 @@
+/*General*/
+.square-icon-large {
+    height: 15px;
+    width: 15px;
+    background: black;
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: 2px;
+}
+.square-icon-small {
+    width: 10px;
+    height: 10px;
+    background-color: black;
+}
+/*features gradient*/
+#gradient-wrapper {
+    background-image: url(./images/waves.png);
+    background-repeat: repeat;
+    background-blend-mode: multiply;
+    -webkit-mask-image: linear-gradient(white, rgba(255, 255, 255, 0) 50%);
+    position: absolute;
+    width: 100%;
+    height: 180%;
+    z-index: 0;
+}
+
+/* Next/Prev Features */
+#features-prev-next{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0vw 5vw 2vw 2vw;
+    border-top: 2px solid #ccc;
+    padding-top: 50px;
+    box-sizing: border-box;
+}
+#previous-feature,
+#next-feature{
+    flex: 1 0 0%;
+    vertical-align: top;
+    max-width: 375px;
+    min-width: 150px;
+    background: #f5f3ef;
+    background-image: url(./images/paper.png);
+    margin: 15px 0;
+    box-shadow: 0px 2px 10px 2px rgba(0, 0, 75, 0.2);
+    overflow: hidden;
+    position: relative;
+}
+#next-feature{
+    text-align: right;
+}
+#next-feature .feature-card-title {
+    justify-content: flex-end;
+}
+#previous-feature {
+    margin-right: 1vw;
+}
+.internal-feature-card {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+}
+.feature-card-image {
+    line-height: 0;
+    flex: 1 0 35%;
+    min-width: 150px;
+}
+.feature-card-image img {
+    height: 100%;
+    object-fit: cover;
+}
+.feature-card-text {
+    padding: 12px;
+    flex: 1 0 40%;
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    height: calc(160px - 2vw);
+}
+.feature-card-title {
+    flex-grow: .5;
+    display: flex;
+    align-items: center;
+}
+.feature-card-body {
+    color: #555;
+    color: var(--main-font);
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+.feature-card-wrapper:hover img {
+    filter: brightness(.8);
+}
+.prev-text, .next-text {
+    color: #777;
+    font-family: 'Oswald';
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin: 0 5px;
+    position: relative;
+}
+.prev-arrow {
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    transform: translateY(-55%);
+    transition: .2s;
+}
+.next-arrow {
+position: absolute;
+    right: -8px;
+    top: 50%;
+    transform: translateY(-55%);
+    transition: .2s;
+}
+.feature-card-wrapper:hover .next-arrow {
+    right: -12px;
+}
+.feature-card-wrapper:hover .prev-arrow {
+    left: -12px;
+}
+
+
+/******** Both ********/
+.view-features-display .views-row{
+    vertical-align:top;
+    background: #ffffff;
+    background-image: url(./images/paper.png);
+    background-blend-mode: multiply;
+}
+.view-features-display .fields-right .views-field-title {
+    margin-bottom: 15px;
+}
+.feature-card-title,
+.view-features-display .fields-right .views-field-title a {
+    color: #475974;
+    color: var(--main);
+    font-size: 18px;
+    line-height: 1.3;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-family: 'Merriweather', 'Frutiger', Helvetica, Arial, Sans-serif;
+    font-family: var(--font-fam-2);
+}
+#feature-author,
+.cards-view-sidebar .views-field-field-author,
+.feature-card-author,
+.view-features-display .views-field-field-author {
+    font-family: 'Oswald';
+    color: #888;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+.cards-view-sidebar .views-field-field-author {
+    width: 100%;
+}
+#block-views-features-display-block-1 .block-title,
+.node-issue .field-name-field-publication-month {
+    margin: 0 1vw;
+}
+/******** Main feature *******/
+.cards-view-main {
+    margin: 1vw;
+    line-height: 0;
+}
+.cards-view-main .views-row{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin-bottom: 20px;
+}
+.cards-view-main .views-row.views-row img {
+    height: 425px;
+    height: calc(350px + 5vw);
+    object-fit: cover;
+    width: 100%;
+}
+.cards-view-main .fields-right {
+    padding: 15px;
+    flex-grow: 1;
+    width: 35%;
+    min-width: 150px;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+}
+.cards-view-main .fields-right .views-field-title a {
+    font-size: 34px;
+}
+.cards-view-main .fields-right .views-field-field-tag-line {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 2em;
+    margin-bottom: 15px;
+    flex-grow: .5;
+    display: flex;
+    align-items: center;
+}
+.cards-view-main .views-field-field-cover-image {
+    min-width: 300px;
+    width: 60%;
+    flex-grow: 1;
+}
+.cards-view-main .views-field-field-author {
+    margin-bottom: 10px;
+}
+.cards-view-main .views-field-nothing {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+}
+/*Read more button*/
+.read-more a {
+    position: relative;
+    background: #314d71;
+    color: white;
+    padding: 2px 25px 4px 15px;
+    font-family: 'Oswald';
+    font-family: var(--font-fam-2);
+    font-weight: bold;
+    font-size: 17px;
+}
+.read-more a .read-more-arrow {
+    position: absolute;
+    right: 14px;
+    transition: .2s;
+}
+.cards-view-main .views-row:hover .read-more a .read-more-arrow {
+    right: 10px;
+}
+
+/******** Other features ********/
+.cards-view .views-row {
+    flex: 1 0 0%;
+    min-width: 250px;
+    margin: 27px 1vw;
+}
+.cards-view .fields-right {
+    padding: 15px;
+}
+.cards-view .views-row .views-field-field-cover-image img {
+    object-fit: cover;
+    width: 100%;
+    height: 250px;
+}
+.image-read-feature {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image-read-feature .views-field-field-cover-image {
+    width: 100%;
+}
+.image-read-feature .views-field-nothing {
+    position: absolute;
+    color: white;
+    padding: 5px;
+    border: 1px solid white;
+    font-family: 'Oswald';
+    letter-spacing: 1px;
+    font-size: 20px;
+    transition-delay: 0s;
+    transition: .4s;
+    opacity: 0;
+}
+.cards-view .views-row:hover .image-read-feature .views-field-nothing {
+    opacity: 1;
+    transition-delay: .25s;
+}
+/*sidebars*/
+.region-sidebar-second .block {
+    margin: 0px 0% 35px -5%;
+    min-width: 200px;
+    max-width: 375px;
+    background: #ffffff;
+    box-sizing: border-box;
+    background-image: url(./images/paper.png);
+    box-shadow: 0px 2px 10px 2px rgba(0, 0, 75, 0.2);
+}
+#sidebar-header-title {
+    color: white;
+    font-size: 30px;
+    font-family: 'Oswald';
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1.4em;
+}
+.view-feature-page-feature-sidebar #sidebar-header-title:before {
+    content: "";
+    display: block;
+    height: 35px;
+    width: 35px;
+    background-size: 35px 35px;
+    background-image: url(./images/acumen_icon.svg);
+    background-repeat: no-repeat;
+    margin-bottom: 5px;
+}
+#sidebar-header-wrapper {
+    background: #304e72;
+    padding: 15px 25px 15px 25px;
+    background-image: url('./images/waves.png');
+    background-blend-mode: multiply;
+}
+#sidebar-issue {
+    width: fit-content;
+    width: -moz-fit-content;
+    color: white;
+    font-family: 'Oswald';
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+#sidebar-items-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    width: -moz-fit-content;
+}
+#sidebar-square-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.sidebar-square {
+    font-size: 20px;
+}
+#sidebar-square-wrapper .square-icon-small:nth-of-type(1) {
+    background-color: #80a0b1;
+}
+#sidebar-square-wrapper .square-icon-small:nth-of-type(2) {
+    background-color: #ce5a4f;
+}
+#sidebar-square-wrapper .square-icon-small:nth-of-type(3) {
+    background-color: #dab168;
+}
+#sidebar-square-wrapper .square-icon-small:nth-of-type(4) {
+    background-color: #e88058;
+}
+#sidebar-square-wrapper .square-icon-small:nth-of-type(5) {
+    background-color: #a1b881;
+}
+.briefs-sidebar h3 {
+    padding: 0px 25px 0px 25px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-top: 2px solid #ccc;
+    text-transform: uppercase;
+    word-wrap: normal;
+}
+.briefs-sidebar h3 div {
+    margin: 5px 0 -8px 20px;
+    text-indent: -20px;
+}
+.briefs-sidebar h3:first-child {
+    border: none;
+}
+.briefs-sidebar .views-row {
+    margin: 0 2vw 0 2vw;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 6px;
+    display: flex;
+    align-items: center;
+}
+.briefs-sidebar .views-row-last {
+    border: none;
+}
+.briefs-sidebar h3:nth-of-type(1) {
+    color: #80a0b1;
+}
+.briefs-sidebar h3:nth-of-type(1) .square-icon-large {
+    background-color: #80a0b1;
+}
+.briefs-sidebar h3:nth-of-type(2) {
+    color: #ce5a4f;
+}
+.briefs-sidebar h3:nth-of-type(2) .square-icon-large {
+    background-color: #ce5a4f;
+}
+.briefs-sidebar h3:nth-of-type(3) {
+    color: #dab168;
+}
+.briefs-sidebar h3:nth-of-type(3) .square-icon-large {
+    background-color: #dab168;
+}
+.briefs-sidebar h3:nth-of-type(4) {
+    color: #e88058;
+}
+.briefs-sidebar h3:nth-of-type(4) .square-icon-large {
+    background-color: #e88058;
+}
+.briefs-sidebar h3:nth-of-type(5) {
+    color: #a1b881;
+}
+.briefs-sidebar h3:nth-of-type(5) .square-icon-large {
+    background-color: #a1b881;
+}
+.briefs-sidebar .views-field-field-cover-image img {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+}
+.briefs-sidebar .views-field-field-cover-image {
+    min-width: 75px;
+}
+.briefs-sidebar .views-row .views-field {
+    margin: 5px;
+}
+.briefs-sidebar .views-row .views-field.views-field-field-department{
+    margin-bottom: 1px;
+}
+.briefs-sidebar .views-row .views-field.views-field-title{
+    margin-top: 1px;
+}
+.briefs-sidebar .title-dept {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.cards-view-sidebar .views-field-title a,
+.briefs-sidebar .views-row .views-field-field-department,
+.briefs-sidebar .views-row .views-field-title a {
+    font-family: 'Oswald';
+    font-family: var(--font-fam-2);
+    color: #304e72;
+    color: var(--main);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+.cards-view-sidebar .views-field-title a {
+    font-size: 16px
+}
+.briefs-sidebar .views-row .views-field-field-department a {
+    font-size: 15px;
+    font-weight: normal;
+    color: #304e72;
+    color: var(--main);
+}
+.feature-title-author {
+    display: flex;
+    flex: 1 0 0%;
+    min-width: 120px;
+    flex-direction: column;
+    justify-content: center;
+}
+.cards-view-sidebar .views-field-field-cover-image img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+.cards-view-sidebar .views-field-field-cover-image {
+    min-width: 100px;
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+/* features/briefs page sidebars */
+.node-type-feature .region-sidebar-second .block {
+    min-width: 200px;
+}
+.node-type-brief .region-sidebar-second.sidebar,
+.node-type-feature .region-sidebar-second.sidebar {
+    margin-top: 2vw;
+}
+.node-type-feature .region-sidebar-second .block-title {
+    margin: 0;
+    color: white;
+    text-transform: uppercase;
+    font-weight: normal;
+    background: #304e72;
+    padding: 15px 25px 15px 25px;
+    background-image: url(./images/waves.png);
+    background-blend-mode: multiply;
+}
+.region-sidebar-second .view-content {
+    overflow: hidden;
+    transition: .75s;
+}
+#toggle0-button, #toggle1-button {
+    display: block;
+    width: 100%;
+    background: white;
+    color: #475974;
+    font-family: 'Oswald';
+    font-size: 22px;
+    letter-spacing: 1px;
+    transition: .2s;
+    padding: 5px 10%;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+#toggle0-button:hover, #toggle1-button:hover {
+    padding: 5px 11%;
+}
+/*****Page title issues pages******/
+.feature-sub-wrapper,
+.title-sub-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    background: #475874;
+    color: white;
+    max-width: 600px;
+    text-transform: uppercase;
+    margin: 0vw 13vw;
+}
+.feature-sub-wrapper{
+    max-width: 175px;
+}
+.title-sub-wrapper img {
+    height: 50px;
+    width: 38px;
+    object-fit: cover;
+}
+.page-title {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1;
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 32px;
+    font-size: calc(16px + .6vw);
+}
+.pt-features {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1;
+    background: #304e72;
+    background-image: url(./images/waves.png);
+    background-blend-mode: multiply;
+    font-family: 'Oswald';
+    font-weight: 200;
+    font-size: 32px;
+    font-size: calc(14px + .6vw);
+    letter-spacing: 2px;
+    padding: 5px;
+}
+.pt-features:before {
+    content: "";
+    display: block;
+    height: 35px;
+    width: 35px;
+    background-size: 35px 35px;
+    background-image: url(./images/acumen_icon.svg);
+    background-repeat: no-repeat;
+    margin-right: 15px;
+}
+#feature-title-region,
+#issue-title-region {
+    padding: 50px 0 0 0;
+    position: relative;
+}
+.feature-page-title {
+    margin: 0 13vw;
+    padding: 5px 0;
+    font-size: 48px;
+    font-family: 'Oswald';
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #475974;
+}
+.feature-fields-wrapper {
+    margin: 0 13vw;
+}
+.brief-dept {
+    text-transform: uppercase;
+}
+#feature-tag-line {
+    font-style: italic;
+    color: #777;
+    font-size: 23px;
+    padding: 15px 0;
+    border-bottom: 2px solid #777;
+    margin-right: 20vw;
+}
+#feature-author {
+    padding: 15px 0;
+}
+.field-name-field-cover-image {
+    line-height: 0;
+}
+.field-name-field-cover-image img {
+    width: 100%;
+    max-height: 650px;
+    object-fit: cover;
+}
+.field-name-field-main-caption {
+    padding: 10px 10px 25px 10px;
+    background-image: url(./images/paper.png);
+    color: #222;
+}
+/*feature page body*/
+.node-feature .field-name-body{
+    margin-top: 50px; /* This used to be on the bottom of the image caption */
+}
+
+.paragraphs-item-feature-image {
+    margin: auto;
+}
+.paragraphs-item-feature-image {
+    position: relative;
+    margin: 50px auto;
+}
+.paragraphs-item-feature-image img {
+    max-height: 550px;
+    object-fit: cover;
+}
+.paragraphs-item-feature-image .field-name-field-photographer {
+    font-size: 14px;
+    font-size: calc(10px + 0.4vw);
+    font-family: 'Oswald';
+    background: rgba(0,0,0,.4);
+    padding: 2px 5px;
+    letter-spacing: 1px;
+    color: white;
+    position: absolute;
+    bottom: 6px;
+    left: 0px;
+}
+.paragraphs-item-feature-image .field-name-field-caption {
+    position: absolute;
+    font-size: 12px;
+}
+.paragraphs-item-feature-pull-quote .field-name-field-quote {
+    font-size: 28px;
+    color: #af7a1b;
+    font-style: italic;
+    padding: 40px;
+    margin: 50px auto;
+    border-left: 4px solid #dab168;
+    position: relative;
+}
+.paragraphs-item-feature-pull-quote .field-name-field-quote:before {
+    content: open-quote;
+    top: 5px;
+    left: 15px;
+}
+.paragraphs-item-feature-pull-quote .field-name-field-quote:after {
+    content: close-quote;
+    bottom: 5px;
+    right: 15px;
+}
+.paragraphs-item-feature-pull-quote .field-name-field-quote:before, .paragraphs-item-feature-pull-quote .field-name-field-quote:after {
+    font-family: 'Oswald';
+    color: #dab168;
+    position: absolute;
+    font-size: 80px;
+    line-height: .5em;
+}
+.paragraphs-item-feature-video {
+    position: relative;
+    margin: 50px auto;
+}
+.paragraphs-item-feature-video .field-name-field-caption {
+    position: absolute;
+    font-size: 12px;
+}
+.paragraphs-item-feature-video .field-name-field-videographer {
+    font-size: 14px;
+    font-size: calc(10px + 0.4vw);
+    font-family: 'Oswald';
+    background: rgba(0,0,0,0.5);
+    border-radius: 0 0px 0 0;
+    padding: 2px 5px;
+    letter-spacing: 1px;
+    color: white;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    z-index: 1;
+}
+
+/*Slider*/
+.view-issue-slider img {
+    width: 150px;
+    height: 197px;
+    object-fit: cover;
+}
+.view-issue-slider .views-field-title {
+    width: 150px;
+    margin: auto;
+    margin-top: 6px;
+}
+.view-issue-slider {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2% 13vw;
+    background: linear-gradient(to right, #a2c3be, #5a8f8a);
+    background-image: linear-gradient(to right, #a2c3be, #5a8f8a), url(./images/waves.png);
+    background-blend-mode: multiply;
+}
+.view-issue-slider .view-header {
+    flex: 1 0 0%;
+}
+.view-issue-slider .view-content {
+    flex: 1 0;
+    min-width: 80%;
+    overflow: hidden;
+    width: 0%;
+}
+.slick--skin--boxed-carousel .slide__content {
+    margin: 0;
+    border: none;
+    background: none;
+    box-shadow: none;
+    border-radius: 0px;
+}
+.slick--skin--boxed-carousel .slick-list {
+    margin: 0 40px;
+}
+.slick--skin--boxed-carousel .slide__content:hover {
+    box-shadow: none;
+}
+.slider-header-wrapper {
+    margin-bottom: 25px;
+}
+#slider-title {
+    font-size: 36px;
+    font-family: 'Oswald';
+    color: #304e72;
+}
+#slider-title:before {
+    content: "";
+    display: block;
+    height: 35px;
+    width: 35px;
+    background-size: 35px 35px;
+    -webkit-mask: url(./images/acumen_icon.svg);
+    background-repeat: no-repeat;
+    margin-right: 15px;
+    background-image: linear-gradient(#314d71, #314d71);
+}
+#slider-text {
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+.view-issue-slider .views-field-title a {
+    color: white;
+    font-family: 'Oswald';
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+/*slick arrow styles*/
+.slick-next:before {
+    content: "›"!important;
+}
+.slick-prev:before {
+    content: "‹"!important;
+}
+.slick-arrow::before {
+    color: #e58419;
+    font-size: 80px;
+    line-height: 0;
+    font-family: "Frutiger";
+    transition: .08s;
+}
+.slick-arrow:hover::before {
+    color: #b76545;
+}
+
+/*Contributors*/
+#block-block-4 {
+    margin: 0 13vw;
+    margin-bottom: 20px;
+    display: block;
+    cursor: pointer;
+    border-bottom: 1px solid #999;
+    width: auto;
+}
+#block-block-4 h2 {
+    margin: 0;
+    text-transform: uppercase;
+    color: #314d71;
+    font-size: 24px;
+    display: inline-block;
+}
+#con-caret img {
+    height: 60px;
+    width: 60px;
+    margin-bottom: -20px;
+    transform: rotateX(0deg);
+    transition: .3s;
+    filter: blur(0.1px);
+}
+#con-caret {
+    display: inline-block;
+}
+.region-blockgroup-contributors {
+    transition: .6s;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.region-blockgroup-contributors .region-inner {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 13vw;
+}
+.region-blockgroup-contributors .region-inner .block {
+    flex: 1 0 200px;
+    margin-bottom: 15px;
+}
+.region-blockgroup-contributors .region-inner .block-title {
+    color: #666;
+    font-size: 14px;
+    font-family: 'Merriweather';
+    text-transform: uppercase;
+    font-weight: bold;
+    word-spacing: 2px;
+}
+.region-blockgroup-contributors .region-inner .views-row .field-content {
+    font-size: 14px;
+    font-family: 'Merriweather';
+    word-spacing: 1px;
+    color: #666;
+}
+
+/****** STYLING FOR SEARCH AND ARCHIVE PAGES *****/
+
+/*** Styling for both Search and Archive pages first ***/
+
+.page-search header#main-content-header,
+.page-archive header#main-content-header,
+.page-contributors-archive header#main-content-header,
+.page-features-archive header#main-content-header,
+.page-briefs-archive header#main-content-header{
+    margin: 0px 2vw;
+}
+
+.page-search .region-sidebar-first,
+.page-archive .region-sidebar-first,
+.page-contributors-archive .region-sidebar-first,
+.page-features-archive .region-sidebar-first,
+.page-briefs-archive .region-sidebar-first{
+    margin-top: 100px;
+}
+
+.region-sidebar-first #block-menu-menu-search-archive-menu ul li{
+    list-style:none;
+}
+    
+
+.page-archive header#main-content-header h1#page-title,
+.page-briefs-archive header#main-content-header h1#page-title,
+.page-contributors-archive header#main-content-header h1#page-title,
+.page-features-archive header#main-content-header h1#page-title,
+.page-search header#main-content-header h1#page-title{
+    font-size: 3em;
+}
+
+
+/*** Archive Styling first ***/
+/** styling for ALL archive pages first **/
+.page-archive #content,
+.page-contributors-archive #content,
+.page-briefs-archive #content,
+.page-features-archive #content{
+    padding-right: 0px;
+}
+
+
+/*Styling for all archive pages that have tables */
+.archive-pages tr,
+.archive-pages tr.even{
+    background-color: white;
+}
+
+.archive-pages .archive-header-row div{
+    background-color:#e1e1e1;
+    padding: 10px 5px;
+    font-size: 1.2em;
+}    
+
+.archive-pages .views-field-title.archive-header-row div{
+    padding-left: 37px;
+}
+
+.archive-pages td.views-field-title{
+    padding-left: 40px;
+}
+
+.archive-pages th{
+    padding: 30px 0px 0px 0px;
+    border: none;
+    color: black;
+}
+
+.archive-pages table{
+    border: none;
+    margin-top: 70px;
+}
+
+.archive-pages thead{
+    border-top: solid 1px #7e7e7e;
+}
+
+.archive-pages table caption{
+    padding: 16px;
+    background-color: #ff9900;
+    color: white;
+    width: fit-content;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    font-family: Sans-Serif;
+    font-weight: bold;
+}
+
+/* Styling for the briefs archive ONLY*/
+.page-briefs-archive td.views-field-title{
+    width: 48%;
+}
+.page-briefs-archive td.views-field-field-focus-area{
+    width: 24%;
+}
+
+@media screen and (min-width:769px) and (max-width: 797px)  {
+    .page-briefs-archive .archive-header-row div{
+	min-height: 76px;
+    } 
+}
+
+@media screen and (max-width:638px) {
+
+    .page-briefs-archive .archive-header-row div{
+	min-height: 76px;
+    }
+}
+
+
+/* styling for features archive ONLY */
+.page-features-archive td.views-field-field-author{
+    width: 18%;
+}
+.page-features-archive td.views-field-title{
+    width: 22%;
+}
+
+/* Styling for the Authors Sidebar -on the features archive*/
+.archive-pages.authors-sidebar th{
+    padding: 0px;
+}
+.archive-pages.authors-sidebar td{
+    padding-left: 12px;
+}
+.archive-pages.authors-sidebar thead{
+    border: none;
+}
+.archive-pages.authors-sidebar .archive-header-row div{
+    padding-left: 15px;
+}
+
+/*Styling for the Contributors Archive ONLY */
+.page-contributors-archive-table .views-field-field-advisory-board .item-list ul li,
+.page-contributors-archive-table .views-field-field-graphic-designers .item-list ul li,
+.page-contributors-archive .views-field-field-advisory-board .item-list ul li,
+.page-contributors-archive .views-field-field-graphic-designers .item-list ul li{
+    list-style:none;
+    font-size: 15px;
+    margin: 0px;
+    line-height: 1.4em;
+}
+
+.page-contributors-archive #content{
+    padding-left: 0px;
+}
+
+.page-contributors-archive header#main-content-header{
+    margin-left: 0px;
+}
+
+.page-contributors-archive .views-field{
+    display: inline-block;
+    margin-top: 30px;
+    vertical-align:top;
+}
+
+.page-contributors-archive [class*="views-field-view"] .views-field{
+    margin-top: 0px;
+}
+
+.page-contributors-archive .views-field{
+    font-size: 15px;
+}
+
+.page-contributors-archive .views-field .views-label{
+    background-color: #e1e1e1;
+    padding: 10px 5px;
+    margin: 0px;
+    color:black;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 0px 0px 20px -5px;
+    border-bottom: solid 1px #ccc;
+}
+
+.page-contributors-archive .views-field .view-content,
+.page-contributors-archive .views-field div.field-content{
+    padding-right: 20px;
+}
+
+
+.page-contributors-archive h3{
+    padding: 16px;
+    background-color: #ff9900;
+    color: white;
+    width: fit-content;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    font-family: Sans-Serif;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.page-contributors-archive .contributors-archive table{
+    border-top: solid 1px #7e7e7e;
+    margin-top: 0px;
+    padding-top: 30px;
+}
+
+@media screen and (max-width: 1520px){
+    .page-contributors-archive .views-field .views-label{
+	min-height: 70px;
+    }
+}
+
+/* field widths so that the contributors table/grid allign properly */
+.page-contributors-archive .views-field{
+    min-width: 150px;
+}
+
+.page-contributors-archive .views-field-field-editor{
+    width: 14%;
+}
+
+.page-contributors-archive .views-field-field-advisory-board{
+    width:23%;
+}
+
+.page-contributors-archive .views-field-field-graphic-designers{
+    width: 16%;
+}
+
+.page-contributors-archive .views-field-field-writers{
+    width: 18%;
+} 
+
+.page-contributors-archive .views-field-field-photographers{
+    width: 14%;
+}
+.page-contributors-archive .views-field-field-videographers{
+    width: 12%;
+}
+
+/* Styling for the issue archive */
+.page-archive .cards-view .views-row{
+    flex: 1 0 0;
+    max-width: 300px;
+    min-width: 300px;
+    margin: 3%;
+    text-align:center;
+}
+
+.page-archive .cards-view img{
+    height: auto;
+}
+
+.page-archive .cards-view .field-content{
+    width: 300px;
+}
+
+.page-archive .cards-view .views-field-title a{
+    letter-spacing: inherit;
+    font-size: 1.4em;
+    line-height: 2em;
+    font-weight: bold;
+    color: #ff9900;
+    color: var(--link);
+}
+
+.page-archive .cards-view .views-field-title a:hover{
+    text-decoration: underline;
+}
+
+    
+/*** All SEARCH Stuff Styling ****/
+/* Styling for all search stuff */
+.page-search #breadcrumb{
+    display:none;
+}
+
+.page-search .form-item{
+    display: inline-block;
+}
+
+.page-search input#edit-submit-1{
+    margin-left: 30px;
+}
+
+.page-search #page-title{
+    padding: 3% 0px 0px 0px;
+}
+
+.page-search #search-api-page-search-form p{
+    font-size: .9em;
+}
+
+
+/* Search Results Page Styling */
+.page-search .node-teaser{
+    border-top: solid 1px #7b7b7b;
+    padding: 40px 0px 20px 0px;
+}
+
+.page-search .node-teaser .field-name-body p{
+    font-size:.9em;
+}
+
+.page-search .field-name-body.field-type-text-with-summary::after{
+    display:block;
+    content: "";
+    border-bottom: solid black 1px;
+    width: 65px;
+    margin-bottom: 15px;
+}
+.node-feature.node-teaser .field-name-body{
+    margin-top: 0px;
+}
+
+.page-search .field-name-field-issue{
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: Sans-Serif;
+}
+
+.page-search .field-name-field-focus-area,
+.page-search .field-name-field-department{
+    display:inline-block;
+    padding:0px;
+    margin:0px;
+
+}
+
+.page-search .field-name-field-focus-area ul,
+.page-search .field-name-field-department ul{
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.page-search .field-name-field-focus-area ul li,
+.page-search .field-name-field-department ul li{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.page-search .field-name-field-focus-area ul ::after{
+    content:">";
+    padding-left: 10px;
+}
+
+.page-search .field-name-field-author{
+    font-family: Sans-Serif;
+    font-size: 1.1em;
+    color: #808080;
+}
+
+.page-search .field-name-field-author .field-item::before{
+    content: "By";
+    padding-right: 5px;
+}
+
+.page-search .field-name-field-department ul li{
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+.page-search .field-name-field-tag-line .field-item{
+    font-style: italic;
+}
+
+.page-search .node-teaser nav ul{
+    margin: 0px;
+    padding: 0px;
+    line-height: 1em;
+}
+
+.page-search .node-teaser nav a{
+    display: block;
+    border: solid 1px #555;
+    width: fit-content;
+    padding: 8px 30px;
+    font-size: 1.1em;
+    font-family: Sans-Serif;
+    font-weight: bold;
+}
+
+.page-search .node-teaser nav a:hover{
+    border: solid 1px #ff9900;
+    background-color: #ff9900;
+    color: white;
+    
+}
+
+/* Sidebar facet/filtering styling */
+.page-search .region-blockgroup-all-search-facets h2{
+    font-size: 1.7em;
+}
